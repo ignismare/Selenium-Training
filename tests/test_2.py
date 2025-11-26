@@ -80,7 +80,7 @@ def test1(amount, browser, headless):
         roll_dice(driver,wait_time, amount)
 
         # perform a test: check if the proper amount of dice were rolled:
-        dice_rolled_text = driver.find_element(by=By.ID, value="invisible").find_elements(by=By.TAG_NAME, value="p")[5].text
+        dice_rolled_text = driver.find_element(by=By.ID, value="invisible").find_elements(by=By.TAG_NAME, value="p")[4].text
 
         if dice_rolled_text.__contains__(amount):
            print("\nTest passed: correct amount of dice were rolled")
@@ -109,7 +109,7 @@ def test2(amount,record_property):
         roll_dice(driver,wait_time, amount)
 
         # perform a test: check if the proper amount of dice were rolled:
-        dice_results = driver.find_element(by=By.ID, value="invisible").find_elements(by=By.TAG_NAME, value="p")[6].find_elements(by=By.TAG_NAME, value="img")
+        dice_results = driver.find_element(by=By.ID, value="invisible").find_elements(by=By.TAG_NAME, value="p")[5].find_elements(by=By.TAG_NAME, value="img")
 
         dice_sum = 0
 
@@ -151,7 +151,7 @@ def test3():
 
         # get the timestamp from the website
         website_timestamp = driver.find_element(by=By.ID, value="invisible")\
-            .find_elements(by=By.TAG_NAME, value="p")[7].text[11:21]
+            .find_elements(by=By.TAG_NAME, value="p")[6].text[11:21]
         t_website_timestamp = datetime.datetime.strptime(website_timestamp, '%Y-%m-%d')
 
         # compare the two timestamps
